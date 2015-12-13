@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>SVG </title>
+	<link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+	<div id="menu">
+		<div class="left">
+			<object data="final.svg" type="image/svg+xml" height="80%" width="80%" id="fin"></object>
+		</div>
+		<div class="left">
+			<object data="project.svg" type="image/svg+xml" height="80%" width="80%" id="project"></object>
+		</div>
+	</div>
+	<script>
+		var fi = this.document.getElementById("fin");
+		fi.addEventListener("load", function () {
+			var mp = fi.contentDocument;
+			var microphoneon = mp.getElementById("microphoneon");
+			var micphoneoff = mp.getElementById("microphoneoff");
+			var microphonedisabled = mp.getElementById("microphonedisabled");
+			microphoneon.style.visibility = "hidden";
+			microphonedisabled.style.visibility = "hidden";
+
+			mp.addEventListener("mouseover", function () {
+				microphonedisabled.style.visibility = "hidden";
+				micphoneoff.style.visibility = "hidden";
+				microphoneon.style.visibility = "visible";
+			}, false);
+			mp.addEventListener("mouseout", function () {
+				microphonedisabled.style.visibility = "hidden";
+				microphoneon.style.visibility = "hidden";
+				micphoneoff.style.visibility = "visible";
+
+			}, false);
+			mp.addEventListener("click", function () {
+				//alert("click");
+				micphoneoff.style.visibility = "hidden";
+				microphoneon.style.visibility = "hidden";
+				microphonedisabled.style.visibility = "visible";
+			}, false);
+		}, false);
+
+
+		var pro = this.document.getElementById("project");
+		pro.addEventListener("load", function () {
+			var hp = pro.contentDocument;
+			var hphoneon = hp.getElementById("headphoneon_2_");
+			var hphoneoff = hp.getElementById("headphoneoff_3_");
+			var hphonedisabled = hp.getElementById("headphonedisabled");
+			hphoneon.style.visibility = "hidden";
+			hphonedisabled.style.visibility = "hidden";
+
+			hp.addEventListener("mouseover", function () {
+				hphonedisabled.style.visibility = "hidden";
+				hphoneoff.style.visibility = "hidden";
+				hphoneon.style.visibility = "visible";
+			}, false);
+			hp.addEventListener("mouseout", function () {
+				hphonedisabled.style.visibility = "hidden";
+				hphoneon.style.visibility = "hidden";
+				hphoneoff.style.visibility = "visible";
+
+			}, false);
+			hp.addEventListener("click", function () {
+				//alert("click");
+				hphoneoff.style.visibility = "hidden";
+				hphoneon.style.visibility = "hidden";
+				hphonedisabled.style.visibility = "visible";
+			}, false);
+		}, false);
+	</script>
+</body>
+
+</html>
